@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <>
       <header>
-        <div className="container">
+        <div className="container mx-auto">
           <nav className="grid grid-cols-12 p-3">
             <ul className="col-start-2 col-span-3 flex justify-between">
               <li>

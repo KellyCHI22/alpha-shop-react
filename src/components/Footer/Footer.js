@@ -1,71 +1,53 @@
+import logo from '../../assets/icons/logo.svg';
+import facebookIcon from '../../assets/icons/facebook.svg';
+import instagramIcon from '../../assets/icons/instagram.svg';
+import whatsappIcon from '../../assets/icons/whatsapp.svg';
+
 export default function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="footer-container">
-        <div className="footer-logo-container">
-          <svg className="icon-logo">
-            <use xlinkHref="#svg-icon-logo" />
-          </svg>
+    <footer className="bg-gray-100">
+      <div className="container mx-auto py-10 grid grid-cols-12">
+
+        <div className="col-start-2 col-span-2 my-auto">
+          <img src={logo} alt="logo-img" />
         </div>
-        <section className="footer-section">
-          <h2 className="section-title">客戶服務</h2>
-          <div className="section-content">
-            <a className="page-link" href="#">
-              運送說明
-            </a>
-            <a className="page-link" href="#">
-              退換貨相關
-            </a>
-            <a className="page-link" href="#">
-              付款資訊
-            </a>
-            <a className="page-link" href="#">
-              FAQ
-            </a>
+
+        <section className="col-span-2">
+          <h2 className="text-xl font-bold mb-3">客戶服務</h2>
+          <div className="flex flex-col space-y-1">
+            <a className="text-gray-500" href="#">運送說明</a>
+            <a className="text-gray-500" href="#">退換貨相關</a>
+            <a className="text-gray-500" href="#">付款資訊</a>
+            <a className="text-gray-500" href="#">FAQ</a>
           </div>
         </section>
-        <section className="footer-section">
-          <h2 className="section-title">關於我們</h2>
-          <div className="section-content">
-            <a className="page-link" href="#">
-              品牌故事
-            </a>
-            <a className="page-link" href="#">
-              媒體聯繫
-            </a>
-            <a className="page-link" href="#">
-              Press kit
-            </a>
+
+        <section className="col-span-2">
+          <h2 className="text-xl font-bold  mb-3">關於我們</h2>
+          <div className="flex flex-col  space-y-1">
+            <a className="text-gray-500" href="#">品牌故事</a>
+            <a className="text-gray-500" href="#">媒體聯繫</a>
+            <a className="text-gray-500" href="#">Press kit</a>
           </div>
         </section>
-        <section className="footer-section">
-          <h2 className="section-title">資訊</h2>
-          <div className="section-content">
-            <a className="page-link" href="#">
-              隱私權政策
-            </a>
-            <a className="page-link" href="#">
-              Cookie
-            </a>
-            <a className="page-link" href="#">
-              GDPR
-            </a>
+
+        <section className="col-span-2">
+          <h2 className="text-xl font-bold  mb-3">資訊</h2>
+          <div className="flex flex-col  space-y-1">
+            <a className="text-gray-500" href="#">隱私權政策</a>
+            <a className="text-gray-500" href="#">Cookie</a>
+            <a className="text-gray-500" href="#">GDPR</a>
           </div>
         </section>
-        <section className="footer-section">
-          <h2 className="section-title">追蹤 ALPHA Shop</h2>
-          <div className="section-content">
-            <div className="tel-info">+886 02123-45678</div>
-            <div className="social-icon-group">
-              <svg className="social-icon cursor-point">
-                <use xlinkHref="#svg-icon-facebook" />
-              </svg>
-              <svg className="social-icon cursor-point">
-                <use xlinkHref="#svg-icon-instagram" />
-              </svg>
-              <svg className="social-icon cursor-point">
-                <use xlinkHref="#svg-icon-whatsapp" />
-              </svg>
+
+        <section className="col-span-2">
+          <h2 className="text-xl font-bold  mb-3">追蹤 ALPHA Shop</h2>
+          <div className="flex flex-col  space-y-1">
+            <div className="text-gray-500">+886 02123-45678</div>
+            <div className="flex gap-4">
+              <a href="#"><img src={facebookIcon} alt="facebookIcon" /></a>
+              <a href="#"><img src={instagramIcon} alt="instagramIcon" /></a>
+              <a href="#"><img src={whatsappIcon} alt="whatsappIcon" /></a>
             </div>
           </div>
         </section>
