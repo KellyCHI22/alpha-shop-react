@@ -4,10 +4,10 @@ import Footer from './components/Footer/Footer';
 
 export default function App() {
   return (
-    <>
+    <div className="font-NotoSans">
       <Header />
       <Main />
       <Footer />
-    </>
+    </div>
   );
-}
+};
