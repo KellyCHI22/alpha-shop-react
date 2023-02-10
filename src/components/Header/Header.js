@@ -1,7 +1,7 @@
-import logo from '../../assets/icons/logo.svg';
-import searchIcon from '../../assets/icons/search.svg';
-import cartIcon from '../../assets/icons/cart.svg';
-import moonIcon from '../../assets/icons/moon.svg';
+import logo from "../../assets/icons/logo.svg";
+import searchIcon from "../../assets/icons/search.svg";
+import cartIcon from "../../assets/icons/cart.svg";
+import moonIcon from "../../assets/icons/moon.svg";
 
 export default function Header() {
   return (
@@ -9,7 +9,7 @@ export default function Header() {
       <header>
         <div className="container mx-auto">
           <nav className="grid grid-cols-12 py-3">
-            <ul className="col-start-2 col-span-3 flex justify-between">
+            <ul className="col-span-3 col-start-2 flex justify-between">
               <li>
                 <a href="#">男款</a>
               </li>
@@ -27,11 +27,11 @@ export default function Header() {
               </li>
             </ul>
 
-            <a className="col-start-6 col-span-2 mx-auto" href="#">
+            <a className="col-span-2 col-start-6 mx-auto" href="#">
               <img src={logo} alt="logo-img" />
             </a>
 
-            <ul className="col-start-10 col-span-2 flex justify-end gap-6">
+            <ul className="col-span-2 col-start-10 flex justify-end gap-6">
               <li>
                 <img src={searchIcon} alt="search-icon" />
               </li>

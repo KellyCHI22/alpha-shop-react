@@ -1,5 +1,5 @@
-import Step from './Step/Step';
-import Cart from './Cart/Cart';
+import Step from "./Step/Step";
+import Cart from "./Cart/Cart";
 
 export default function Main() {
   return (

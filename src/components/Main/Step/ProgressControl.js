@@ -1,14 +1,15 @@
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import Button from "./Button";
 
 export default function ProgressControl() {
   return (
     <>
-      <section className="pt-5 flex justify-end border-t">
+      <section className="flex justify-end border-t pt-5">
         <section>
-          <button className="flex items-center gap-3 py-3 px-8 rounded-xl bg-rose-400 text-white">
+          <Button>
             下一步
             <HiOutlineArrowNarrowRight />
-          </button>
+          </Button>
         </section>
       </section>
     </>
