@@ -1,45 +1,36 @@
 export default function StepProgress() {
-  return (<>
-    <section>
-      {/* step one */}
-      <span className="progress-group" data-phase="address">
-        <span className="progress-icon">
-          <span className="text">1</span>
-          <svg className="icon cursor-point">
-            <use xlinkHref="#svg-icon-pg-complete" />
-          </svg>
+  return (
+    <>
+      <section className="my-10 flex justify-between space-x-5">
+        {/* step one */}
+        <span>
+          <span className="inline-block text-center align-text-top bg-gray-900 text-white rounded-full w-6 h-6 mr-3">
+            <span>1</span>
+          </span>
+          <span>寄送地址</span>
         </span>
-        <span className="progress-label">寄送地址</span>
-      </span>
 
-      <span className="progress-bar" data-order={1} />
+        <span className="w-16 h-0.5 my-3 bg-gray-900" />
 
-      {/* step two */}
-      <span className="progress-group" data-phase="shipping">
-        <span className="progress-icon">
-          <span className="text">2</span>
-          <svg className="icon cursor-point">
-            <use xlinkHref="#svg-icon-pg-complete" />
-          </svg>
+        {/* step two */}
+        <span>
+          <span className="inline-block text-center align-text-top rounded-full border-[1px] border-gray-300 w-6 h-6 mr-3">
+            <span className="text-gray-400">2</span>
+          </span>
+          <span className="text-gray-400">運送方式</span>
         </span>
-        <span className="progress-label">運送方式</span>
-      </span>
 
-      <span className="progress-bar" data-order={2} />
+        <span className="w-16 h-0.5 my-3 bg-gray-300" />
 
-      {/* step three */}
-      <span className="progress-group" data-phase="credit-card">
-        <span className="progress-icon">
-          <span className="text">3</span>
-          <svg className="icon cursor-point">
-            <use xlinkHref="#svg-icon-pg-complete" />
-          </svg>
+        {/* step three */}
+        <span>
+          <span className="inline-block text-center align-text-top rounded-full border-[1px] border-gray-300 w-6 h-6 mr-3">
+            <span className="text-gray-400">3</span>
+          </span>
+          <span className="text-gray-400">付款資訊</span>
         </span>
-        <span className="progress-label">付款資訊</span>
-      </span>
 
-
-    </section>
-  </>
+      </section>
+    </>
   );
 }

@@ -1,45 +1,15 @@
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+
 export default function ProgressControl() {
   return (
     <>
-      <section className="progress-control-container col col-lg-6 col-sm-12">
-
-        <section className="button-group col col-12" data-phase="address">
-          <button className="next">
+      <section className="my-5 pt-5 flex justify-end border-t">
+        <section>
+          <button className="flex items-center gap-3 py-3 px-8 rounded-xl bg-rose-400 text-white">
             下一步
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-right-arrow" />
-            </svg>
+            <HiOutlineArrowNarrowRight />
           </button>
         </section>
-
-
-        <section className="button-group col col-12" data-phase="shipping">
-          <button className="prev">
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-left-arrow" />
-            </svg>
-            上一步
-          </button>
-          <button className="next">
-            下一步
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-right-arrow" />
-            </svg>
-          </button>
-        </section>
-
-
-        <section className="button-group col col-12" data-phase="credit-card">
-          <button className="prev">
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-left-arrow" />
-            </svg>
-            上一步
-          </button>
-          <button className="next">確認下單</button>
-        </section>
-
-
       </section>
     </>
   );

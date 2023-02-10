@@ -1,41 +1,46 @@
 export default function StepOne() {
   return (<>
-    <form className="col col-12" data-phase="address">
-      <h3 className="form-title">寄送地址</h3>
-      <section className="form-body col col-12">
-        <div className="col col-12">
-          <div className="input-group input-w-lg-2 input-w-sm-s1">
-            <div className="input-label">稱謂</div>
-            <div className="select-container">
-              <select>
-                <option value="mr" selected="">
-                  先生
-                </option>
+    <form className="mt-10 mb-40">
+      <h3 className="text-xl font-bold mb-5">寄送地址</h3>
+
+      <section className="flex flex-col gap-5">
+
+        <div className="grid grid-cols-3 gap-5">
+          <div className="col-span-1">
+            <div className="mb-1 text-gray-500">稱謂</div>
+            <div>
+              <select className="rounded-lg border-gray-400 w-full ">
+                <option value="mr" selected="">先生</option>
                 <option value="ms">女士</option>
                 <option value="mx">不明</option>
               </select>
             </div>
           </div>
-          <div className="input-group input-w-lg-4 input-w-sm-s2">
-            <div className="input-label">姓名</div>
-            <input type="text" placeholder="請輸入姓名" />
+
+          <div className="col-span-2">
+            <div className="mb-1 text-gray-500">姓名</div>
+            <input type="text" placeholder="請輸入姓名" className="rounded-lg border-gray-400 w-full " />
           </div>
         </div>
-        <div className="col col-12">
-          <div className="input-group input-w-lg-3 input-w-sm-full">
-            <div className="input-label">電話</div>
-            <input type="tel" placeholder="請輸入行動電話" />
+
+
+        <div className="grid grid-cols-2 gap-5">
+          <div>
+            <div className="mb-1 text-gray-500">電話</div>
+            <input className="rounded-lg border-gray-400 w-full" type="tel" placeholder="請輸入行動電話" />
           </div>
-          <div className="input-group input-w-lg-3 input-w-sm-full">
-            <div className="input-label">Email</div>
-            <input type="email" placeholder="請輸入電子郵件" />
+          <div>
+            <div className="mb-1 text-gray-500">Email</div>
+            <input className="rounded-lg border-gray-400 w-full" type="email" placeholder="請輸入電子郵件" />
           </div>
         </div>
-        <div className="col col-12">
-          <div className="input-group input-w-lg-2 input-w-sm-full">
-            <div className="input-label">縣市</div>
-            <div className="select-container">
-              <select required="">
+
+
+        <div className="grid grid-cols-3 gap-5">
+          <div>
+            <div className="mb-1 text-gray-500">縣市</div>
+            <div>
+              <select required="true" className="rounded-lg border-gray-400 w-full ">
                 <option value="">請選擇縣市</option>
                 <option value="KLU">基隆市</option>
                 <option value="TPH">新北市</option>
@@ -69,12 +74,15 @@ export default function StepOne() {
               </select>
             </div>
           </div>
-          <div className="input-group input-w-lg-4 input-w-sm-full">
-            <div className="input-label">地址</div>
-            <input type="text" placeholder="請輸入地址" />
+
+          <div className="col-span-2">
+            <div className="mb-1 text-gray-500">地址</div>
+            <input className="rounded-lg border-gray-400 w-full" type="text" placeholder="請輸入地址" />
           </div>
         </div>
+
       </section>
+
     </form>
   </>
   );
