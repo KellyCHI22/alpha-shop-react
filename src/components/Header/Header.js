@@ -8,7 +8,7 @@ export default function Header() {
     <>
       <header>
         <div className="container mx-auto">
-          <nav className="grid grid-cols-12 p-3">
+          <nav className="grid grid-cols-12 py-3">
             <ul className="col-start-2 col-span-3 flex justify-between">
               <li>
                 <a href="#">男款</a>
@@ -31,7 +31,7 @@ export default function Header() {
               <img src={logo} alt="logo-img" />
             </a>
 
-            <ul className="col-start-10 col-span-2 flex justify-center gap-5">
+            <ul className="col-start-10 col-span-2 flex justify-end gap-6">
               <li>
                 <img src={searchIcon} alt="search-icon" />
               </li>
