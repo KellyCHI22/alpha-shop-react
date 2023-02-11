@@ -9,32 +9,33 @@ export default function StepOne() {
 
       <section className="flex flex-col gap-5">
         <div className="grid grid-cols-3 gap-5">
-          <div className="col-span-1">
-            <Select label="稱謂" value="gender" options={genders} />
-          </div>
-
-          <div className="col-span-2">
-            <Input label="姓名" type="text" placeholder="請輸入姓名" />
-          </div>
+          <Select
+            className="col-span-1"
+            label="稱謂"
+            value="gender"
+            options={genders}
+          />
+          <Input
+            className="col-span-2"
+            label="姓名"
+            type="text"
+            placeholder="請輸入姓名"
+          />
         </div>
 
         <div className="grid grid-cols-2 gap-5">
-          <div>
-            <Input label="電話" type="tel" placeholder="請輸入行動電話" />
-          </div>
-          <div>
-            <Input label="Email" type="email" placeholder="請輸入電子郵件" />
-          </div>
+          <Input label="電話" type="tel" placeholder="請輸入行動電話" />
+          <Input label="Email" type="email" placeholder="請輸入電子郵件" />
         </div>
 
         <div className="grid grid-cols-3 gap-5">
-          <div>
-            <Select label="縣市" value="city" options={cities} />
-          </div>
-
-          <div className="col-span-2">
-            <Input label="地址" type="text" placeholder="請輸入地址" />
-          </div>
+          <Select label="縣市" value="city" options={cities} />
+          <Input
+            className="col-span-2"
+            label="地址"
+            type="text"
+            placeholder="請輸入地址"
+          />
         </div>
       </section>
     </form>
