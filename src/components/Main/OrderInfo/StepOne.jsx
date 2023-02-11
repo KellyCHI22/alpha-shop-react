@@ -1,4 +1,4 @@
-import { genders, cities } from "../../../constants/constants";
+import { genders, cities } from "../../../constants";
 import Input from "./Input";
 import Select from "./Select";
 

@@ -5,7 +5,7 @@ export default function StepProgress() {
       <section className="my-10 flex justify-between space-x-5">
         <span>
           <span className="mr-3 inline-block h-6 w-6 rounded-full bg-gray-900 text-center align-text-top text-white">
-            <span>1</span>
+            <span className="-mt-[1px] block">1</span>
           </span>
           <span>寄送地址</span>
         </span>
@@ -14,7 +14,7 @@ export default function StepProgress() {
 
         <span>
           <span className="mr-3 inline-block h-6 w-6 rounded-full border-[1px] border-gray-300 text-center align-text-top">
-            <span className="text-gray-400">2</span>
+            <span className="-mt-[1px] block text-gray-400">2</span>
           </span>
           <span className="text-gray-400">運送方式</span>
         </span>
@@ -23,7 +23,7 @@ export default function StepProgress() {
 
         <span>
           <span className="mr-3 inline-block h-6 w-6 rounded-full border-[1px] border-gray-300 text-center align-text-top">
-            <span className="text-gray-400">3</span>
+            <span className="-mt-[1px] block text-gray-400">3</span>
           </span>
           <span className="text-gray-400">付款資訊</span>
         </span>

@@ -11,9 +11,9 @@ export default function Step() {
         <h2 className="text-3xl font-bold">結帳</h2>
         <StepProgress />
         <section>
-          <StepOne />
-          {/* <StepTwo />
-          <StepThree /> */}
+          {/* <StepOne /> */}
+          <StepTwo />
+          {/* <StepThree /> */}
         </section>
       </section>
       <ProgressControl />
