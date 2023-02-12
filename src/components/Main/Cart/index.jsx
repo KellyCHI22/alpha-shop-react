@@ -3,8 +3,8 @@ import { cartItems } from "../../../constants";
 
 export default function Cart() {
   return (
-    <section className="col-span-4 col-start-8 flex flex-col justify-end">
-      <div className="flex h-fit flex-col gap-5 rounded border p-8">
+    <section className="flex flex-col justify-end sm:col-span-4 sm:col-start-8 sm:row-span-2">
+      <div className="flex h-fit flex-col gap-5 rounded border p-5 sm:p-8">
         <h3 className="text-lg font-bold">購物籃</h3>
 
         <section className="my-4 space-y-10">
@@ -31,21 +31,22 @@ export default function Cart() {
 function CartItem({ product }) {
   return (
     <>
-      <div className="grid grid-cols-[100px_2fr_1fr]">
+      <div className="flex justify-between sm:grid sm:grid-cols-[100px_1fr]">
         <img src={product.image} className="h-[100px]" />
-        <div className="ml-5">
-          <div className="mb-3">{product.name}</div>
-          <div>
-            <div className="flex items-center gap-5">
+
+        <div className="flex flex-col items-end justify-between sm:ml-5 sm:grid sm:grid-cols-[1fr_auto] sm:items-start">
+          <div>{product.name}</div>
+          <div className="sm:col-start-1">
+            <div className="flex w-fit items-center gap-5 sm:-mt-5">
               <FaMinus className="rounded-full bg-gray-200 p-1.5 text-2xl" />
               <span>{product.count}</span>
               <FaPlus className="rounded-full bg-gray-200 p-1.5 text-2xl" />
             </div>
           </div>
+          <div className="justify-self-end font-bold sm:col-start-2 sm:row-start-1">{`$ ${(
+            product.price * product.count
+          ).toLocaleString()}`}</div>
         </div>
-        <div className="justify-self-end font-bold">{`$ ${(
-          product.price * product.count
-        ).toLocaleString()}`}</div>
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import Radio from "./Radio";
 export default function StepTwo() {
   return (
     <>
-      <form className="mt-10 mb-40">
+      <form className="mb-10 sm:mb-0 sm:h-96">
         <h3 className="mb-5 text-xl font-bold">運送方式</h3>
 
         <section className="space-y-5">

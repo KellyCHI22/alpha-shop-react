@@ -4,7 +4,7 @@ import Select from "./Select";
 
 export default function StepOne() {
   return (
-    <form className="mt-10 mb-40">
+    <form className="mb-10 sm:mb-0 sm:h-96">
       <h3 className="mb-5 text-xl font-bold">寄送地址</h3>
 
       <section className="flex flex-col gap-5">
@@ -23,12 +23,12 @@ export default function StepOne() {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-5">
+        <div className="flex flex-col gap-5 sm:grid sm:grid-cols-2">
           <Input label="電話" type="tel" placeholder="請輸入行動電話" />
           <Input label="Email" type="email" placeholder="請輸入電子郵件" />
         </div>
 
-        <div className="grid grid-cols-3 gap-5">
+        <div className="flex flex-col gap-5 sm:grid sm:grid-cols-3">
           <Select label="縣市" value="city" options={cities} />
           <Input
             className="col-span-2"

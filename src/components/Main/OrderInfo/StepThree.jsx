@@ -3,17 +3,17 @@ import Input from "./Input";
 export default function StepThree() {
   return (
     <>
-      <form className="mt-10 mb-40">
+      <form className="mb-10 sm:mb-0 sm:h-96">
         <h3 className="mb-5 text-xl font-bold">付款資訊</h3>
         <section className="flex flex-col gap-5">
           <Input
-            className="w-2/3"
+            className="sm:w-2/3"
             label="持卡人姓名"
             type="text"
             placeholder="請輸入姓名"
           />
           <Input
-            className="w-2/3"
+            className="sm:w-2/3"
             label="卡號"
             type="text"
             placeholder="1111 2222 3333 4444"

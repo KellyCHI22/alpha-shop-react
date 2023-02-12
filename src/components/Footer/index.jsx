@@ -6,7 +6,7 @@ import whatsappIcon from "../../assets/icons/whatsapp.svg";
 export default function Footer() {
   return (
     <footer className="bg-gray-100">
-      <div className="container mx-auto grid grid-cols-12 py-10">
+      <div className="container flex flex-col items-center gap-5 px-5 py-10 text-center sm:mx-auto sm:grid sm:grid-cols-12 sm:items-start sm:gap-0 sm:px-0 sm:text-left">
         <div className="col-span-2 col-start-2 my-auto">
           <img src={logo} alt="logo-img" />
         </div>
@@ -63,7 +63,7 @@ export default function Footer() {
           <h2 className="mb-3 text-xl  font-bold">追蹤 ALPHA Shop</h2>
           <div className="flex flex-col  space-y-1">
             <div className="text-gray-500">+886 02123-45678</div>
-            <div className="flex gap-4">
+            <div className="flex justify-center gap-4 pt-1 sm:justify-start">
               <a href="#">
                 <img src={facebookIcon} alt="facebookIcon" />
               </a>
