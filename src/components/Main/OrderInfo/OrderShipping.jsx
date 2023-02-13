@@ -1,6 +1,6 @@
 import Radio from "./Radio";
 
-export default function StepTwo() {
+export default function OrderShipping() {
   return (
     <>
       <form className="mb-10 sm:mb-0 sm:h-96">

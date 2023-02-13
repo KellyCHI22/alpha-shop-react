@@ -1,6 +1,6 @@
 import OrderInfo from "./OrderInfo";
 import Cart from "./Cart";
-import ProgressControl from "./OrderInfo/ProgressControl";
+import ProgressControl from "./ProgressControl";
 
 export default function Main() {
   return (

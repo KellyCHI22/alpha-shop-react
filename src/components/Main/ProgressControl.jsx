@@ -1,5 +1,5 @@
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import Button from "./Button";
+import { ReactComponent as RightArrow } from "assets/icons/right-arrow.svg";
+import Button from "./OrderInfo/Button";
 
 export default function ProgressControl() {
   return (
@@ -8,7 +8,7 @@ export default function ProgressControl() {
         <section>
           <Button>
             下一步
-            <HiOutlineArrowNarrowRight />
+            <RightArrow />
           </Button>
         </section>
       </section>

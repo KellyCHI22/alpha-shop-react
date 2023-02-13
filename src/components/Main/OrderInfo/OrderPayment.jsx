@@ -1,6 +1,6 @@
 import Input from "./Input";
 
-export default function StepThree() {
+export default function OrderPayment() {
   return (
     <>
       <form className="mb-10 sm:mb-0 sm:h-96">

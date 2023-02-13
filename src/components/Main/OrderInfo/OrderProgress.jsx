@@ -1,5 +1,5 @@
 // ! 樣式需要再做 refactor
-export default function StepProgress() {
+export default function OrderProgress() {
   return (
     <>
       <section className="my-10 flex items-center justify-between space-x-5">

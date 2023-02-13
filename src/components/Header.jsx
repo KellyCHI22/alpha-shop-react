@@ -1,12 +1,12 @@
-import logo from "../../assets/icons/logo.svg";
-import searchIcon from "../../assets/icons/search.svg";
-import cartIcon from "../../assets/icons/cart.svg";
-import moonIcon from "../../assets/icons/moon.svg";
-import toggleIcon from "../../assets/icons/toggle.svg";
+import { ReactComponent as Logo } from "assets/icons/logo.svg";
+import { ReactComponent as ToggleIcon } from "assets/icons/toggle.svg";
+import searchIcon from "assets/icons/search.svg";
+import cartIcon from "assets/icons/cart.svg";
+import moonIcon from "assets/icons/moon.svg";
 import { useState } from "react";
 
 export default function Header() {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
   const handleToggle = () => {
     setToggle((prev) => !prev);
   };
@@ -20,7 +20,7 @@ export default function Header() {
               className="absolute cursor-pointer sm:hidden"
               onClick={handleToggle}
             >
-              <img src={toggleIcon} alt="toggle-icon" />
+              <ToggleIcon />
             </div>
 
             {toggle ? <ToggleNav /> : null}
@@ -28,7 +28,7 @@ export default function Header() {
               className="order-0 mx-auto mb-3 sm:col-span-2 sm:col-start-6 sm:mb-0"
               href="#"
             >
-              <img src={logo} alt="logo-img" />
+              <Logo />
             </a>
           </nav>
         </div>
@@ -41,21 +41,11 @@ function ToggleNav() {
   return (
     <>
       <ul className="order-1 flex flex-col items-center sm:order-none sm:col-span-3 sm:col-start-2 sm:flex-row sm:justify-between sm:py-0">
-        <li className="w-full border-b py-5 text-center sm:w-auto sm:border-none sm:py-0 sm:text-start">
-          <a href="#">男款</a>
-        </li>
-        <li className="w-full border-b py-5 text-center  sm:w-auto sm:border-none sm:py-0 sm:text-start">
-          <a href="#">女款</a>
-        </li>
-        <li className="w-full border-b py-5 text-center sm:w-auto sm:border-none sm:py-0 sm:text-start">
-          <a href="#">最新消息</a>
-        </li>
-        <li className="w-full border-b py-5 text-center sm:w-auto sm:border-none sm:py-0 sm:text-start">
-          <a href="#">聯絡我們</a>
-        </li>
-        <li className="w-full border-b py-5 text-center sm:w-auto sm:border-none sm:py-0 sm:text-start">
-          <a href="#">客製商品</a>
-        </li>
+        <ToggleNavLink href="#">男款</ToggleNavLink>
+        <ToggleNavLink href="#">女款</ToggleNavLink>
+        <ToggleNavLink href="#">最新消息</ToggleNavLink>
+        <ToggleNavLink href="#">聯絡我們</ToggleNavLink>
+        <ToggleNavLink href="#">客製商品</ToggleNavLink>
       </ul>
 
       <ul className="order-2 flex justify-center gap-8 py-5 sm:col-span-2 sm:col-start-10 sm:justify-end sm:py-0">
@@ -70,5 +60,13 @@ function ToggleNav() {
         </li>
       </ul>
     </>
+  );
+}
+
+function ToggleNavLink({ href, children }) {
+  return (
+    <li className="w-full border-b py-5 text-center hover:text-orange-500 sm:w-auto sm:border-none sm:py-0 sm:text-start">
+      <a href={href}>{children}</a>
+    </li>
   );
 }

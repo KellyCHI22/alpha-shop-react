@@ -1,5 +1,5 @@
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { cartItems } from "../../../constants";
+import { cartItems } from "constants";
 
 export default function Cart() {
   return (
@@ -32,15 +32,15 @@ function CartItem({ product }) {
   return (
     <>
       <div className="flex justify-between sm:grid sm:grid-cols-[100px_1fr]">
-        <img src={product.image} className="h-[100px]" />
+        <img src={product.image} className="h-[100px]" alt={product.name} />
 
         <div className="flex flex-col items-end justify-between sm:ml-5 sm:grid sm:grid-cols-[1fr_auto] sm:items-start">
           <div>{product.name}</div>
           <div className="sm:col-start-1">
             <div className="flex w-fit items-center gap-5 sm:-mt-5">
-              <FaMinus className="rounded-full bg-gray-200 p-1.5 text-2xl" />
+              <FaMinus className="cursor-pointer rounded-full bg-gray-200 p-1.5 text-2xl hover:bg-gray-300" />
               <span>{product.count}</span>
-              <FaPlus className="rounded-full bg-gray-200 p-1.5 text-2xl" />
+              <FaPlus className="cursor-pointer rounded-full bg-gray-200 p-1.5 text-2xl hover:bg-gray-300" />
             </div>
           </div>
           <div className="justify-self-end font-bold sm:col-start-2 sm:row-start-1">{`$ ${(
