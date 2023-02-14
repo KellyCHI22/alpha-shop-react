@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100">
+    <footer className="bg-gray-100 dark:bg-neutral-800">
       <div className="container flex flex-col items-center gap-5 px-5 py-10 text-center sm:mx-auto sm:grid sm:grid-cols-12 sm:items-start sm:gap-0 sm:px-0 sm:text-left">
         <div className="col-span-2 col-start-2 my-auto">
           <Logo />
@@ -40,7 +40,9 @@ export default function Footer() {
         <section className="col-span-2">
           <h2 className="mb-3 text-xl  font-bold">追蹤 ALPHA Shop</h2>
           <div className="flex flex-col  space-y-1">
-            <div className="text-gray-500">+886 02123-45678</div>
+            <div className="text-gray-500 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-500">
+              +886 02123-45678
+            </div>
             <div className="flex justify-center gap-4 pt-1 sm:justify-start">
               <Link href="#">
                 <FaFacebookF className="text-xl" />
@@ -61,7 +63,10 @@ export default function Footer() {
 
 function Link({ href, children }) {
   return (
-    <a href={href} className="text-gray-500 hover:text-orange-500">
+    <a
+      href={href}
+      className="text-gray-500 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-500"
+    >
       {children}
     </a>
   );

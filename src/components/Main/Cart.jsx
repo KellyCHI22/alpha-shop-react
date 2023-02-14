@@ -38,9 +38,9 @@ function CartItem({ product }) {
           <div>{product.name}</div>
           <div className="sm:col-start-1">
             <div className="flex w-fit items-center gap-5 sm:-mt-5">
-              <FaMinus className="cursor-pointer rounded-full bg-gray-200 p-1.5 text-2xl hover:bg-gray-300" />
+              <FaMinus className="cursor-pointer rounded-full bg-gray-200 p-1.5 text-2xl hover:bg-gray-300 dark:bg-neutral-700 dark:hover:bg-neutral-600" />
               <span>{product.count}</span>
-              <FaPlus className="cursor-pointer rounded-full bg-gray-200 p-1.5 text-2xl hover:bg-gray-300" />
+              <FaPlus className="cursor-pointer rounded-full bg-gray-200 p-1.5 text-2xl hover:bg-gray-300 dark:bg-neutral-700 dark:hover:bg-neutral-600" />
             </div>
           </div>
           <div className="justify-self-end font-bold sm:col-start-2 sm:row-start-1">{`$ ${(

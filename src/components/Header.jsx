@@ -1,12 +1,17 @@
 import { ReactComponent as Logo } from "assets/icons/logo.svg";
-import { ReactComponent as ToggleIcon } from "assets/icons/toggle.svg";
-import searchIcon from "assets/icons/search.svg";
-import cartIcon from "assets/icons/cart.svg";
-import moonIcon from "assets/icons/moon.svg";
-import { useState } from "react";
+import { HiMenuAlt2 as ToggleMenu } from "react-icons/hi";
+import {
+  BsSearch as Search,
+  BsCart3 as Cart,
+  BsBrightnessHigh as Light,
+  BsMoon as Moon,
+} from "react-icons/bs";
+import { useState, useContext } from "react";
+import { ThemeContext } from "App";
 
 export default function Header() {
   const [toggle, setToggle] = useState(true);
+
   const handleToggle = () => {
     setToggle((prev) => !prev);
   };
@@ -17,10 +22,10 @@ export default function Header() {
         <div className="container mx-auto px-3 sm:px-0">
           <nav className="flex flex-col py-3 sm:mx-0 sm:grid sm:grid-cols-12">
             <div
-              className="absolute cursor-pointer sm:hidden"
+              className="absolute cursor-pointer text-2xl sm:hidden"
               onClick={handleToggle}
             >
-              <ToggleIcon />
+              <ToggleMenu />
             </div>
 
             {toggle ? <ToggleNav /> : null}
@@ -38,6 +43,8 @@ export default function Header() {
 }
 
 function ToggleNav() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <>
       <ul className="order-1 flex flex-col items-center sm:order-none sm:col-span-3 sm:col-start-2 sm:flex-row sm:justify-between sm:py-0">
@@ -48,15 +55,15 @@ function ToggleNav() {
         <ToggleNavLink href="#">客製商品</ToggleNavLink>
       </ul>
 
-      <ul className="order-2 flex justify-center gap-8 py-5 sm:col-span-2 sm:col-start-10 sm:justify-end sm:py-0">
-        <li>
-          <img src={searchIcon} alt="search-icon" />
+      <ul className="order-2 flex items-center justify-center gap-8 py-5 sm:col-span-2 sm:col-start-10 sm:justify-end sm:py-0">
+        <li className="text-2xl">
+          <Search />
         </li>
-        <li>
-          <img src={cartIcon} alt="cart-icon" />
+        <li className="text-2xl">
+          <Cart />
         </li>
-        <li id="theme-toggle">
-          <img src={moonIcon} alt="moon-icon" />
+        <li className="cursor-pointer text-2xl" onClick={toggleTheme}>
+          {theme === "light" ? <Moon /> : <Light />}
         </li>
       </ul>
     </>
