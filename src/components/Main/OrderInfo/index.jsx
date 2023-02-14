@@ -9,8 +9,8 @@ export default function OrderInfo() {
       <h2 className="text-3xl font-bold">結帳</h2>
       <OrderProgress />
       <OrderAddress />
-      <OrderShipping />
-      <OrderPayment />
+      {/* <OrderShipping /> */}
+      {/* <OrderPayment /> */}
     </div>
   );
 }
