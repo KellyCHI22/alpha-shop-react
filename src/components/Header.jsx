@@ -1,11 +1,9 @@
 import { ReactComponent as Logo } from "assets/icons/logo.svg";
-import { HiMenuAlt2 as ToggleMenu } from "react-icons/hi";
-import {
-  BsSearch as Search,
-  BsCart3 as Cart,
-  BsBrightnessHigh as Light,
-  BsMoon as Moon,
-} from "react-icons/bs";
+import { ReactComponent as MoonIcon } from "assets/icons/moon.svg";
+import { ReactComponent as SunIcon } from "assets/icons/sun.svg";
+import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
+import { ReactComponent as CartIcon } from "assets/icons/cart.svg";
+import { ReactComponent as ToggleIcon } from "assets/icons/toggle.svg";
 import { useState, useContext } from "react";
 import { ThemeContext } from "App";
 
@@ -25,7 +23,7 @@ export default function Header() {
               className="absolute cursor-pointer text-2xl sm:hidden"
               onClick={handleToggle}
             >
-              <ToggleMenu />
+              <ToggleIcon />
             </div>
 
             {toggle ? <ToggleNav /> : null}
@@ -33,7 +31,7 @@ export default function Header() {
               className="order-0 mx-auto mb-3 sm:col-span-2 sm:col-start-6 sm:mb-0"
               href="#"
             >
-              <Logo />
+              <Logo className="text-orange-500" />
             </a>
           </nav>
         </div>
@@ -57,13 +55,13 @@ function ToggleNav() {
 
       <ul className="order-2 flex items-center justify-center gap-8 py-5 sm:col-span-2 sm:col-start-10 sm:justify-end sm:py-0">
         <li className="text-2xl">
-          <Search />
+          <SearchIcon />
         </li>
         <li className="text-2xl">
-          <Cart />
+          <CartIcon />
         </li>
         <li className="cursor-pointer text-2xl" onClick={toggleTheme}>
-          {theme === "light" ? <Moon /> : <Light />}
+          {theme === "light" ? <MoonIcon /> : <SunIcon />}
         </li>
       </ul>
     </>

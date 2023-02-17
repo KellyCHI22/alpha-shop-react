@@ -1,5 +1,5 @@
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { cartItems, dummyItems } from "constants";
+import { cartItems } from "constants";
 
 export default function Cart() {
   return (
@@ -8,7 +8,7 @@ export default function Cart() {
         <h3 className="text-lg font-bold">購物籃</h3>
 
         <section className="my-4 space-y-10">
-          {dummyItems.map((cartItem) => (
+          {cartItems.map((cartItem) => (
             <CartItem key={cartItem.name} product={cartItem} />
           ))}
         </section>
