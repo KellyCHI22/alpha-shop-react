@@ -1,18 +1,23 @@
 import { ReactComponent as Logo } from "assets/icons/logo.svg";
-import { ReactComponent as MoonIcon } from "assets/icons/moon.svg";
-import { ReactComponent as SunIcon } from "assets/icons/sun.svg";
+import { ReactComponent as ToggleIcon } from "assets/icons/toggle.svg";
 import { ReactComponent as SearchIcon } from "assets/icons/search.svg";
 import { ReactComponent as CartIcon } from "assets/icons/cart.svg";
-import { ReactComponent as ToggleIcon } from "assets/icons/toggle.svg";
-import { useState, useContext } from "react";
+import { ReactComponent as MoonIcon } from "assets/icons/moon.svg";
+import { ReactComponent as SunIcon } from "assets/icons/sun.svg";
+import { useState, useContext, Fragment } from "react";
 import { ThemeContext } from "App";
 
 export default function Header() {
-  const [toggle, setToggle] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleToggle = () => {
-    setToggle((prev) => !prev);
+  const handleMenuOpen = () => {
+    setIsMenuOpen((prev) => !prev);
   };
+
+  const mediaQuery = window.matchMedia("(min-width: 640px)");
+  if (mediaQuery.matches && isMenuOpen === false) {
+    setIsMenuOpen(true);
+  }
 
   return (
     <>
@@ -21,15 +26,15 @@ export default function Header() {
           <nav className="flex flex-col py-3 sm:mx-0 sm:grid sm:grid-cols-12">
             <div
               className="absolute cursor-pointer text-2xl sm:hidden"
-              onClick={handleToggle}
+              onClick={handleMenuOpen}
             >
               <ToggleIcon />
             </div>
-
-            {toggle ? <ToggleNav /> : null}
+            {isMenuOpen && <ToggleNav />}
             <a
               className="order-0 mx-auto mb-3 sm:col-span-2 sm:col-start-6 sm:mb-0"
               href="#"
+              onClick={handleMenuOpen}
             >
               <Logo className="text-orange-500" />
             </a>
