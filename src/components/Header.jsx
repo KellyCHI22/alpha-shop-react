@@ -34,7 +34,6 @@ export default function Header() {
             <a
               className="order-0 mx-auto mb-3 sm:col-span-2 sm:col-start-6 sm:mb-0"
               href="#"
-              onClick={handleMenuOpen}
             >
               <Logo className="text-orange-500" />
             </a>
