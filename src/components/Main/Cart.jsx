@@ -3,7 +3,7 @@ import { cartItems } from "constants";
 
 export default function Cart() {
   return (
-    <section className="flex flex-col justify-end  sm:col-span-4 sm:col-start-8 sm:row-span-2">
+    <section className="flex flex-col justify-end sm:col-span-4 sm:col-start-8 sm:row-span-2">
       <div className="flex h-fit flex-col gap-5 rounded border p-5 dark:bg-neutral-800 sm:p-8">
         <h3 className="text-lg font-bold">購物籃</h3>
 

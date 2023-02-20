@@ -1,8 +1,10 @@
-export default function Button({ children, className }) {
+export default function Button({ children, className, onClick }) {
   return (
     <>
       <button
-        className={`focus:ring-black-400 flex items-center gap-3 rounded-xl  bg-rose-400 py-3 px-8 text-white hover:bg-rose-300 ${className}`}
+        className={`flex items-center justify-center gap-3 rounded-xl py-3
+        ${className}`}
+        onClick={onClick}
       >
         {children}
       </button>
