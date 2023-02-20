@@ -42,12 +42,14 @@ const cities = [
 
 const cartItems = [
   {
+    id: 1,
     name: "破壞補丁修身牛仔褲",
     img: productOne,
     quantity: 1,
     price: 3999,
   },
   {
+    id: 2,
     name: "刷色直筒牛仔褲",
     img: productTwo,
     quantity: 1,
