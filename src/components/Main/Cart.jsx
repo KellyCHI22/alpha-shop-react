@@ -13,16 +13,15 @@ export default function Cart() {
       .map((cartItem) => {
         if (cartItem.id === id) {
           if (action === "add") {
-            cartItem.quantity += 1;
-            return cartItem;
+            return { ...cartItem, quantity: cartItem.quantity + 1 };
           } else if (action === "remove") {
-            cartItem.quantity -= 1;
-            return cartItem;
+            return { ...cartItem, quantity: cartItem.quantity - 1 };
           }
         }
         return cartItem;
       })
       .filter((cartItem) => cartItem.quantity > 0);
+
     setCurrentCartItems(updatedCartItems);
   };
 
