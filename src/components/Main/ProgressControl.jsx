@@ -3,30 +3,35 @@ import { ReactComponent as LeftArrow } from "assets/icons/left-arrow.svg";
 import Button from "./OrderInfo/Button";
 
 export default function ProgressControl({ orderStep, onStepButtonClick }) {
-  let renderedButtons;
+  const prevButtonStyles = "w-auto hover:text-neutral-700";
+  const nextButtonStyles = "bg-rose-400 px-8 text-white hover:bg-rose-300";
+  let stepButtons;
 
+  // address 步驟按鈕
   if (orderStep === "address") {
-    renderedButtons = (
+    stepButtons = (
       <Button
-        className="w-full bg-rose-400 px-8 text-white hover:bg-rose-300 sm:w-40"
+        className={`w-full sm:w-40 ${nextButtonStyles}`}
         onClick={() => onStepButtonClick("shipping")}
       >
         下一步
         <RightArrow />
       </Button>
     );
-  } else if (orderStep === "shipping") {
-    renderedButtons = (
+  }
+  // shipping 步驟按鈕
+  else if (orderStep === "shipping") {
+    stepButtons = (
       <>
         <Button
-          className="w-auto hover:text-neutral-700"
+          className={prevButtonStyles}
           onClick={() => onStepButtonClick("address")}
         >
           <LeftArrow />
           上一步
         </Button>
         <Button
-          className="w-40 bg-rose-400 px-8 text-white hover:bg-rose-300"
+          className={`w-40 ${nextButtonStyles}`}
           onClick={() => onStepButtonClick("payment")}
         >
           下一步
@@ -34,19 +39,19 @@ export default function ProgressControl({ orderStep, onStepButtonClick }) {
         </Button>
       </>
     );
-  } else if (orderStep === "payment") {
-    renderedButtons = (
+  }
+  // payment 步驟按鈕
+  else if (orderStep === "payment") {
+    stepButtons = (
       <>
         <Button
-          className="w-auto hover:text-neutral-700"
+          className={prevButtonStyles}
           onClick={() => onStepButtonClick("shipping")}
         >
           <LeftArrow />
           上一步
         </Button>
-        <Button className="w-40 bg-rose-400 px-8 text-white hover:bg-rose-300">
-          確認下單
-        </Button>
+        <Button className={`w-40 ${nextButtonStyles}`}>確認下單</Button>
       </>
     );
   }
@@ -54,13 +59,11 @@ export default function ProgressControl({ orderStep, onStepButtonClick }) {
   return (
     <section className="mt-5 flex justify-end border-t pt-5 sm:col-span-5 sm:col-start-2 sm:row-start-2 sm:mt-0">
       <section
-        className={
-          orderStep === "address"
-            ? "flex w-full sm:justify-end"
-            : "flex w-full justify-between"
-        }
+        className={`flex w-full ${
+          orderStep === "address" ? " sm:justify-end" : "justify-between"
+        }`}
       >
-        {renderedButtons}
+        {stepButtons}
       </section>
     </section>
   );

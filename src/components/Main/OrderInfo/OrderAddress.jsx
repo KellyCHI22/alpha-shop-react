@@ -1,4 +1,4 @@
-import { genders, cities } from "constants"; // 原本用相對路徑：../../../constants
+import { genders, cities } from "constants";
 import Input from "./Input";
 import Select from "./Select";
 

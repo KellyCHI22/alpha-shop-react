@@ -9,7 +9,7 @@ export default function OrderInfo({ orderStep }) {
     renderedStep = <OrderAddress />;
   } else if (orderStep === "shipping") {
     renderedStep = <OrderShipping />;
-  } else {
+  } else if (orderStep === "payment") {
     renderedStep = <OrderPayment />;
   }
 

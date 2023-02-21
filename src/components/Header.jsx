@@ -20,27 +20,25 @@ export default function Header() {
   }
 
   return (
-    <>
-      <header>
-        <div className="container fixed top-0 z-10 mx-auto bg-white px-3 shadow-sm dark:bg-neutral-900 sm:px-0">
-          <nav className="flex flex-col py-3 sm:mx-0 sm:grid sm:grid-cols-12">
-            <div
-              className="absolute cursor-pointer text-2xl sm:hidden"
-              onClick={handleMenuOpen}
-            >
-              <ToggleIcon />
-            </div>
-            {isMenuOpen && <ToggleNav />}
-            <a
-              className="order-0 mx-auto mb-3 sm:col-span-2 sm:col-start-6 sm:mb-0"
-              href="#"
-            >
-              <Logo className="text-orange-500" />
-            </a>
-          </nav>
-        </div>
-      </header>
-    </>
+    <header>
+      <div className="container fixed top-0 z-10 mx-auto bg-white px-3 shadow-sm dark:bg-neutral-900 sm:px-0">
+        <nav className="flex flex-col py-3 sm:mx-0 sm:grid sm:grid-cols-12">
+          <div
+            className="absolute cursor-pointer text-2xl sm:hidden"
+            onClick={handleMenuOpen}
+          >
+            <ToggleIcon />
+          </div>
+          {isMenuOpen && <ToggleNav />}
+          <a
+            className="order-0 mx-auto mb-3 sm:col-span-2 sm:col-start-6 sm:mb-0"
+            href="#"
+          >
+            <Logo className="text-orange-500" />
+          </a>
+        </nav>
+      </div>
+    </header>
   );
 }
 
