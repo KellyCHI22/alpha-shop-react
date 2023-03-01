@@ -3,7 +3,8 @@ import { useContext, useState } from "react";
 import Radio from "./Radio";
 
 export default function OrderShipping() {
-  const { handleShippingChange } = useContext(OrderContext);
+  const { orderStep, orderInfo, handleOrderInfoChange } =
+    useContext(OrderContext);
 
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">
@@ -18,7 +19,7 @@ export default function OrderShipping() {
           price={0}
           description="約 3~7 個工作天"
           isChecked
-          onChange={handleShippingChange}
+          onChange={(e) => handleOrderInfoChange(e, orderStep)}
         />
 
         <Radio
@@ -28,7 +29,7 @@ export default function OrderShipping() {
           label="DHL 貨運"
           price={500}
           description="48 小時內送達"
-          onChange={handleShippingChange}
+          onChange={(e) => handleOrderInfoChange(e, orderStep)}
         />
       </section>
     </form>

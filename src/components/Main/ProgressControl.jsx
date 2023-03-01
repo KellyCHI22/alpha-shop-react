@@ -7,26 +7,15 @@ import { OrderContext } from "context/OrderContext";
 
 export default function ProgressControl() {
   const { currentCartItems } = useContext(CartContext);
-  const {
-    orderStep,
-    addressInfo,
-    shippingInfo,
-    paymentInfo,
-    handleStepButtonClick,
-  } = useContext(OrderContext);
+  const { orderStep, orderInfo, handleStepButtonClick } =
+    useContext(OrderContext);
 
   const totalPrice = currentCartItems.reduce((total, currentItem) => {
     return total + currentItem.price * currentItem.quantity;
-  }, shippingInfo.price);
-
-  const allOrderInfo = {
-    addressInfo,
-    shippingInfo,
-    paymentInfo,
-  };
+  }, orderInfo.shipping.price);
 
   const handleOrderSubmit = () => {
-    console.log(currentCartItems, allOrderInfo, `totalPrice: ${totalPrice}`);
+    console.log(currentCartItems, orderInfo, `totalPrice: ${totalPrice} 元`);
   };
 
   let stepButtons;

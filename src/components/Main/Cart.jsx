@@ -5,11 +5,11 @@ import { OrderContext } from "context/OrderContext";
 
 export default function Cart() {
   const { currentCartItems } = useContext(CartContext);
-  const { shippingInfo } = useContext(OrderContext);
+  const { orderInfo } = useContext(OrderContext);
 
   const totalPrice = currentCartItems.reduce((total, currentItem) => {
     return total + currentItem.price * currentItem.quantity;
-  }, shippingInfo.price);
+  }, orderInfo.shipping.price);
 
   let renderedCartItems;
   if (currentCartItems.length > 0) {
@@ -29,8 +29,8 @@ export default function Cart() {
           <div>運費</div>
           {/* will have to be dynamic */}
           <div className="font-bold">
-            {shippingInfo.price > 0
-              ? `$ ${shippingInfo.price.toLocaleString()}`
+            {orderInfo.shipping.price > 0
+              ? `$ ${orderInfo.shipping.price.toLocaleString()}`
               : "免費"}
           </div>
         </section>

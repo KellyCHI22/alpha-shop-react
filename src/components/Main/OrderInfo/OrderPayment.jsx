@@ -3,7 +3,8 @@ import { useContext, useState } from "react";
 import Input from "./Input";
 
 export default function OrderPayment() {
-  const { paymentInfo, handlePaymentChange } = useContext(OrderContext);
+  const { orderStep, orderInfo, handleOrderInfoChange } =
+    useContext(OrderContext);
 
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">
@@ -14,18 +15,18 @@ export default function OrderPayment() {
           label="持卡人姓名"
           type="text"
           name="name"
-          value={paymentInfo.name}
+          value={orderInfo.payment.name}
           placeholder="請輸入姓名"
-          onChange={handlePaymentChange}
+          onChange={(e) => handleOrderInfoChange(e, orderStep)}
         />
         <Input
           className="sm:w-2/3"
           label="卡號"
           type="text"
           name="cardNumber"
-          value={paymentInfo.cardNumber}
+          value={orderInfo.payment.cardNumber}
           placeholder="1111 2222 3333 4444"
-          onChange={handlePaymentChange}
+          onChange={(e) => handleOrderInfoChange(e, orderStep)}
         />
 
         <div className="grid grid-cols-2 gap-5">
@@ -33,17 +34,17 @@ export default function OrderPayment() {
             label="有效期限"
             type="text"
             name="expireAt"
-            value={paymentInfo.expireAt}
+            value={orderInfo.payment.expireAt}
             placeholder="MM/YY"
-            onChange={handlePaymentChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
           <Input
             label="CVC / CCV"
             type="text"
             name="cvc-ccv"
-            value={paymentInfo["cvc-ccv"]}
+            value={orderInfo.payment["cvc-ccv"]}
             placeholder="123"
-            onChange={handlePaymentChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
         </div>
       </section>

@@ -30,7 +30,7 @@ export default function Radio({
           <div>{description}</div>
         </div>
         <div className="font-bold dark:text-white">
-          {price === "0" ? "免費" : `$ ${price}`}
+          {price === 0 ? "免費" : `$ ${price}`}
         </div>
       </label>
     </div>

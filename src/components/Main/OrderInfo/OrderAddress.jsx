@@ -5,7 +5,8 @@ import Input from "./Input";
 import Select from "./Select";
 
 export default function OrderAddress() {
-  const { addressInfo, handleAddressChange } = useContext(OrderContext);
+  const { orderStep, orderInfo, handleOrderInfoChange } =
+    useContext(OrderContext);
 
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">
@@ -18,16 +19,16 @@ export default function OrderAddress() {
             label="稱謂"
             name="gender"
             options={genders}
-            onChange={handleAddressChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
           <Input
             className="col-span-2"
             label="姓名"
             type="text"
             name="name"
-            value={addressInfo.name}
+            value={orderInfo.address.name}
             placeholder="請輸入姓名"
-            onChange={handleAddressChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
         </div>
 
@@ -36,17 +37,17 @@ export default function OrderAddress() {
             label="電話"
             type="tel"
             name="tel"
-            value={addressInfo.tel}
+            value={orderInfo.address.tel}
             placeholder="請輸入行動電話"
-            onChange={handleAddressChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
           <Input
             label="Email"
             type="email"
             name="email"
-            value={addressInfo.email}
+            value={orderInfo.address.email}
             placeholder="請輸入電子郵件"
-            onChange={handleAddressChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
         </div>
 
@@ -55,16 +56,16 @@ export default function OrderAddress() {
             label="縣市"
             name="city"
             options={cities}
-            onChange={handleAddressChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
           <Input
             className="col-span-2"
             label="地址"
             type="text"
             name="address"
-            value={addressInfo.address}
+            value={orderInfo.address.address}
             placeholder="請輸入地址"
-            onChange={handleAddressChange}
+            onChange={(e) => handleOrderInfoChange(e, orderStep)}
           />
         </div>
       </section>
