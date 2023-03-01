@@ -4,16 +4,6 @@ import Radio from "./Radio";
 
 export default function OrderShipping() {
   const { handleShippingChange } = useContext(OrderContext);
-  // const [shippingInfo, setShippingInfo] = useState({
-  //   shipping: "",
-  //   price: "",
-  // });
-  // const handleShippingChange = (e) => {
-  //   setShippingInfo({
-  //     shipping: e.target.value,
-  //     price: parseInt(e.target.dataset.price),
-  //   });
-  // };
 
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">

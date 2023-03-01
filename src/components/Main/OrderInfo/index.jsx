@@ -2,8 +2,12 @@ import OrderProgress from "./OrderProgress";
 import OrderAddress from "./OrderAddress";
 import OrderShipping from "./OrderShipping";
 import OrderPayment from "./OrderPayment";
+import { useContext } from "react";
+import { OrderContext } from "context/OrderContext";
 
-export default function OrderInfo({ orderStep }) {
+export default function OrderInfo() {
+  const { orderStep } = useContext(OrderContext);
+
   let renderedStep;
   if (orderStep === "address") {
     renderedStep = <OrderAddress />;

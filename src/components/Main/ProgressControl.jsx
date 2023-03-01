@@ -5,9 +5,16 @@ import { useContext } from "react";
 import { CartContext } from "context/CartContext";
 import { OrderContext } from "context/OrderContext";
 
-export default function ProgressControl({ orderStep, onStepButtonClick }) {
+export default function ProgressControl() {
   const { currentCartItems } = useContext(CartContext);
-  const { addressInfo, shippingInfo, paymentInfo } = useContext(OrderContext);
+  const {
+    orderStep,
+    addressInfo,
+    shippingInfo,
+    paymentInfo,
+    handleStepButtonClick,
+  } = useContext(OrderContext);
+
   const totalPrice = currentCartItems.reduce((total, currentItem) => {
     return total + currentItem.price * currentItem.quantity;
   }, shippingInfo.price);
@@ -30,7 +37,7 @@ export default function ProgressControl({ orderStep, onStepButtonClick }) {
     stepButtons = (
       <Button
         className={`w-full sm:w-40 ${nextButtonStyles}`}
-        onClick={() => onStepButtonClick("shipping")}
+        onClick={() => handleStepButtonClick("shipping")}
       >
         下一步
         <RightArrow />
@@ -43,14 +50,14 @@ export default function ProgressControl({ orderStep, onStepButtonClick }) {
       <>
         <Button
           className={prevButtonStyles}
-          onClick={() => onStepButtonClick("address")}
+          onClick={() => handleStepButtonClick("address")}
         >
           <LeftArrow />
           上一步
         </Button>
         <Button
           className={`w-40 ${nextButtonStyles}`}
-          onClick={() => onStepButtonClick("payment")}
+          onClick={() => handleStepButtonClick("payment")}
         >
           下一步
           <RightArrow />
@@ -64,7 +71,7 @@ export default function ProgressControl({ orderStep, onStepButtonClick }) {
       <>
         <Button
           className={prevButtonStyles}
-          onClick={() => onStepButtonClick("shipping")}
+          onClick={() => handleStepButtonClick("shipping")}
         >
           <LeftArrow />
           上一步
