@@ -57,21 +57,4 @@ const cartItems = [
   },
 ];
 
-const dummyItems = [
-  {
-    id: "1",
-    name: "貓咪罐罐",
-    img: "http://placekitten.com/300/300",
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: "2",
-    name: "貓咪干干",
-    img: "http://placekitten.com/400/400/",
-    price: 200,
-    quantity: 1,
-  },
-];
-
-export { cities, genders, cartItems, dummyItems };
+export { cities, genders, cartItems };

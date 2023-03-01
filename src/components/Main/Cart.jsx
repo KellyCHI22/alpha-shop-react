@@ -1,38 +1,18 @@
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { cartItems } from "constants";
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "context/CartContext";
 
 export default function Cart() {
-  const [currentCartItems, setCurrentCartItems] = useState([...cartItems]);
+  const { currentCartItems } = useContext(CartContext);
+
   const totalPrice = currentCartItems.reduce((total, currentItem) => {
     return total + currentItem.price * currentItem.quantity;
   }, 0);
 
-  const handleQuantityClick = (id, action) => {
-    const updatedCartItems = currentCartItems
-      .map((cartItem) => {
-        if (cartItem.id === id) {
-          if (action === "add") {
-            return { ...cartItem, quantity: cartItem.quantity + 1 };
-          } else if (action === "remove") {
-            return { ...cartItem, quantity: cartItem.quantity - 1 };
-          }
-        }
-        return cartItem;
-      })
-      .filter((cartItem) => cartItem.quantity > 0);
-
-    setCurrentCartItems(updatedCartItems);
-  };
-
   let renderedCartItems;
   if (currentCartItems.length > 0) {
     renderedCartItems = currentCartItems.map((cartItem) => (
-      <CartItem
-        key={cartItem.id}
-        product={cartItem}
-        handleQuantityClick={handleQuantityClick}
-      />
+      <CartItem key={cartItem.id} product={cartItem} />
     ));
   } else {
     renderedCartItems = <h2>｡ﾟヽ(ﾟ´Д`)ﾉﾟ｡ 您的購物車中沒有商品</h2>;
@@ -58,7 +38,9 @@ export default function Cart() {
   );
 }
 
-function CartItem({ product, handleQuantityClick }) {
+function CartItem({ product }) {
+  const { handleQuantityClick } = useContext(CartContext);
+
   return (
     <div className="flex justify-between sm:grid sm:grid-cols-[100px_1fr]">
       <img src={product.img} className="h-[100px]" alt={product.name} />
