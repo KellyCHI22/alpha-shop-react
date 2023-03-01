@@ -32,6 +32,7 @@ export function OrderProvider({ children }) {
   });
 
   const handleOrderInfoChange = (e, orderStep) => {
+    // 因為 shipping 有多一個 price 屬性要更新所以特別抓出來
     if (orderStep === "shipping") {
       setOrderInfo({
         ...orderInfo,

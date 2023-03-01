@@ -1,3 +1,6 @@
+import { OrderContext } from "context/OrderContext";
+import { useContext } from "react";
+
 export default function Radio({
   id,
   value,
@@ -5,9 +8,10 @@ export default function Radio({
   label,
   price,
   description,
-  isChecked = false,
   onChange,
 }) {
+  const { orderStep, orderInfo } = useContext(OrderContext);
+
   return (
     <div className="relative">
       <input
@@ -16,7 +20,7 @@ export default function Radio({
         name={name}
         value={value}
         data-price={price}
-        defaultChecked={isChecked}
+        defaultChecked={orderInfo[orderStep][name] === value}
         className="peer absolute top-1/2 left-5 -translate-y-1/2 text-gray-900 focus:ring-gray-900 dark:bg-gray-500"
         required
         onChange={onChange}

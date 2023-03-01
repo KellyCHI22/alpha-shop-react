@@ -1,6 +1,10 @@
 import { ReactComponent as ProgressCompleteIcon } from "assets/icons/pg-complete.svg";
+import { OrderContext } from "context/OrderContext";
+import { useContext } from "react";
 
-export default function OrderProgress({ orderStep }) {
+export default function OrderProgress() {
+  const { orderStep } = useContext(OrderContext);
+
   return (
     <section className="my-10 flex items-center justify-between space-x-5">
       <OrderProgressCount

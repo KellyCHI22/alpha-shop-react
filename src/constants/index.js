@@ -57,22 +57,4 @@ const cartItems = [
   },
 ];
 
-const orderInfoDefault = {
-  address: {
-    gender: "",
-    name: "",
-    tel: "",
-    email: "",
-    city: "",
-    address: "",
-  },
-  shipping: "",
-  payment: {
-    name: "",
-    cardNumber: "",
-    expireAt: "",
-    "cvc-ccv": "",
-  },
-};
-
-export { cities, genders, cartItems, orderInfoDefault };
+export { cities, genders, cartItems };

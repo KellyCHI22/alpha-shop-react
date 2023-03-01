@@ -1,8 +1,8 @@
-import { genders, cities } from "constants";
-import { OrderContext } from "context/OrderContext";
-import { useContext, useState } from "react";
 import Input from "./Input";
 import Select from "./Select";
+import { genders, cities } from "constants";
+import { useContext } from "react";
+import { OrderContext } from "context/OrderContext";
 
 export default function OrderAddress() {
   const { orderStep, orderInfo, handleOrderInfoChange } =

@@ -18,7 +18,6 @@ export default function OrderShipping() {
           label="標準運送"
           price={0}
           description="約 3~7 個工作天"
-          isChecked
           onChange={(e) => handleOrderInfoChange(e, orderStep)}
         />
 
