@@ -1,13 +1,15 @@
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useContext } from "react";
 import { CartContext } from "context/CartContext";
+import { OrderContext } from "context/OrderContext";
 
 export default function Cart() {
   const { currentCartItems } = useContext(CartContext);
+  const { shippingInfo } = useContext(OrderContext);
 
   const totalPrice = currentCartItems.reduce((total, currentItem) => {
     return total + currentItem.price * currentItem.quantity;
-  }, 0);
+  }, shippingInfo.price);
 
   let renderedCartItems;
   if (currentCartItems.length > 0) {
@@ -26,7 +28,11 @@ export default function Cart() {
         <section className="flex justify-between border-t py-3">
           <div>運費</div>
           {/* will have to be dynamic */}
-          <div className="font-bold">免費</div>
+          <div className="font-bold">
+            {shippingInfo.price > 0
+              ? `$ ${shippingInfo.price.toLocaleString()}`
+              : "免費"}
+          </div>
         </section>
 
         <section className="flex justify-between border-t py-3">

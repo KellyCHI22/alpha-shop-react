@@ -1,23 +1,11 @@
 import { genders, cities } from "constants";
-import { useState } from "react";
+import { OrderContext } from "context/OrderContext";
+import { useContext, useState } from "react";
 import Input from "./Input";
 import Select from "./Select";
 
 export default function OrderAddress() {
-  const [addressInfo, setAddressInfo] = useState({
-    gender: "mr",
-    name: "",
-    tel: "",
-    email: "",
-    city: "",
-    address: "",
-  });
-  const handleChange = (e) => {
-    setAddressInfo({
-      ...addressInfo,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const { addressInfo, handleAddressChange } = useContext(OrderContext);
 
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">
@@ -30,7 +18,7 @@ export default function OrderAddress() {
             label="稱謂"
             name="gender"
             options={genders}
-            onChange={handleChange}
+            onChange={handleAddressChange}
           />
           <Input
             className="col-span-2"
@@ -39,7 +27,7 @@ export default function OrderAddress() {
             name="name"
             value={addressInfo.name}
             placeholder="請輸入姓名"
-            onChange={handleChange}
+            onChange={handleAddressChange}
           />
         </div>
 
@@ -50,7 +38,7 @@ export default function OrderAddress() {
             name="tel"
             value={addressInfo.tel}
             placeholder="請輸入行動電話"
-            onChange={handleChange}
+            onChange={handleAddressChange}
           />
           <Input
             label="Email"
@@ -58,7 +46,7 @@ export default function OrderAddress() {
             name="email"
             value={addressInfo.email}
             placeholder="請輸入電子郵件"
-            onChange={handleChange}
+            onChange={handleAddressChange}
           />
         </div>
 
@@ -67,7 +55,7 @@ export default function OrderAddress() {
             label="縣市"
             name="city"
             options={cities}
-            onChange={handleChange}
+            onChange={handleAddressChange}
           />
           <Input
             className="col-span-2"
@@ -76,7 +64,7 @@ export default function OrderAddress() {
             name="address"
             value={addressInfo.address}
             placeholder="請輸入地址"
-            onChange={handleChange}
+            onChange={handleAddressChange}
           />
         </div>
       </section>

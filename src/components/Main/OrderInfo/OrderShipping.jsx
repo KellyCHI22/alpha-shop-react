@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { OrderContext } from "context/OrderContext";
+import { useContext, useState } from "react";
 import Radio from "./Radio";
 
 export default function OrderShipping() {
-  const [shippingInfo, setShippingInfo] = useState({
-    shipping: "",
-    price: "",
-  });
-  const handleChange = (e) => {
-    setShippingInfo({
-      shipping: e.target.value,
-      price: parseInt(e.target.dataset.price),
-    });
-  };
+  const { handleShippingChange } = useContext(OrderContext);
+  // const [shippingInfo, setShippingInfo] = useState({
+  //   shipping: "",
+  //   price: "",
+  // });
+  // const handleShippingChange = (e) => {
+  //   setShippingInfo({
+  //     shipping: e.target.value,
+  //     price: parseInt(e.target.dataset.price),
+  //   });
+  // };
 
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">
@@ -26,7 +28,7 @@ export default function OrderShipping() {
           price={0}
           description="約 3~7 個工作天"
           isChecked
-          onChange={handleChange}
+          onChange={handleShippingChange}
         />
 
         <Radio
@@ -36,7 +38,7 @@ export default function OrderShipping() {
           label="DHL 貨運"
           price={500}
           description="48 小時內送達"
-          onChange={handleChange}
+          onChange={handleShippingChange}
         />
       </section>
     </form>
