@@ -1,8 +1,24 @@
 import { genders, cities } from "constants";
+import { useState } from "react";
 import Input from "./Input";
 import Select from "./Select";
 
 export default function OrderAddress() {
+  const [addressInfo, setAddressInfo] = useState({
+    gender: "mr",
+    name: "",
+    tel: "",
+    email: "",
+    city: "",
+    address: "",
+  });
+  const handleChange = (e) => {
+    setAddressInfo({
+      ...addressInfo,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">
       <h3 className="mb-5 text-xl font-bold">寄送地址</h3>
@@ -14,27 +30,53 @@ export default function OrderAddress() {
             label="稱謂"
             name="gender"
             options={genders}
+            onChange={handleChange}
           />
           <Input
             className="col-span-2"
             label="姓名"
             type="text"
+            name="name"
+            value={addressInfo.name}
             placeholder="請輸入姓名"
+            onChange={handleChange}
           />
         </div>
 
         <div className="flex flex-col gap-5 sm:grid sm:grid-cols-2">
-          <Input label="電話" type="tel" placeholder="請輸入行動電話" />
-          <Input label="Email" type="email" placeholder="請輸入電子郵件" />
+          <Input
+            label="電話"
+            type="tel"
+            name="tel"
+            value={addressInfo.tel}
+            placeholder="請輸入行動電話"
+            onChange={handleChange}
+          />
+          <Input
+            label="Email"
+            type="email"
+            name="email"
+            value={addressInfo.email}
+            placeholder="請輸入電子郵件"
+            onChange={handleChange}
+          />
         </div>
 
         <div className="flex flex-col gap-5 sm:grid sm:grid-cols-3">
-          <Select label="縣市" value="city" options={cities} />
+          <Select
+            label="縣市"
+            name="city"
+            options={cities}
+            onChange={handleChange}
+          />
           <Input
             className="col-span-2"
             label="地址"
             type="text"
+            name="address"
+            value={addressInfo.address}
             placeholder="請輸入地址"
+            onChange={handleChange}
           />
         </div>
       </section>

@@ -2,12 +2,14 @@ import OrderInfo from "./OrderInfo";
 import Cart from "./Cart";
 import ProgressControl from "./ProgressControl";
 import { useState } from "react";
-import { cartItems } from "constants";
+import { cartItems, orderInfoDefault } from "constants";
 import { CartContext } from "context/CartContext";
+import { OrderContext } from "context/OrderContext";
 
 export default function Main() {
   const [orderStep, setOrderStep] = useState("address");
   const [currentCartItems, setCurrentCartItems] = useState([...cartItems]);
+  const [orderInfo, setOrderInfo] = useState(orderInfoDefault);
 
   const handleStepButtonClick = (step) => {
     setOrderStep(step);
@@ -35,7 +37,6 @@ export default function Main() {
       <div className="container py-24 px-5 sm:mx-auto sm:grid sm:grid-cols-12 sm:py-24 sm:px-0">
         <CartContext.Provider value={{ currentCartItems, handleQuantityClick }}>
           <OrderInfo orderStep={orderStep} />
-
           <Cart />
           <ProgressControl
             orderStep={orderStep}

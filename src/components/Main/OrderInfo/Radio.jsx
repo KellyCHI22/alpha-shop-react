@@ -1,13 +1,25 @@
-export default function Radio({ id, name, label, price, description }) {
+export default function Radio({
+  id,
+  value,
+  name,
+  label,
+  price,
+  description,
+  isChecked = false,
+  onChange,
+}) {
   return (
     <div className="relative">
       <input
         type="radio"
         id={id}
         name={name}
-        defaultValue={id}
+        value={value}
+        data-price={price}
+        defaultChecked={isChecked}
         className="peer absolute top-1/2 left-5 -translate-y-1/2 text-gray-900 focus:ring-gray-900 dark:bg-gray-500"
         required
+        onChange={onChange}
       />
       <label
         htmlFor={id}

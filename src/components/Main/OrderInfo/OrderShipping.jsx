@@ -1,6 +1,18 @@
+import { useState } from "react";
 import Radio from "./Radio";
 
 export default function OrderShipping() {
+  const [shippingInfo, setShippingInfo] = useState({
+    shipping: "",
+    price: "",
+  });
+  const handleChange = (e) => {
+    setShippingInfo({
+      shipping: e.target.value,
+      price: parseInt(e.target.dataset.price),
+    });
+  };
+
   return (
     <form className="mb-10 sm:mb-0 sm:h-96">
       <h3 className="mb-5 text-xl font-bold">運送方式</h3>
@@ -8,18 +20,23 @@ export default function OrderShipping() {
       <section className="space-y-5">
         <Radio
           id="standard-shipping"
+          value="standard-shipping"
           name="shipping"
           label="標準運送"
-          price="0"
+          price={0}
           description="約 3~7 個工作天"
+          isChecked
+          onChange={handleChange}
         />
 
         <Radio
           id="DHL-shipping"
+          value="DHL-shipping"
           name="shipping"
           label="DHL 貨運"
-          price="500"
+          price={500}
           description="48 小時內送達"
+          onChange={handleChange}
         />
       </section>
     </form>
